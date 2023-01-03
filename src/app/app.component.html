@@ -26,7 +26,6 @@
   }
 
   .toolbar {
-    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -316,5 +315,10 @@
   />
   <span>{{ title }}</span>
 </div>
+
+<a routerLink="/tickets/list" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" >
+  <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+  Lista
+</a>
 
 <router-outlet></router-outlet>
