@@ -2,14 +2,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EmptyRouteComponent } from './empty-route/empty-route.component';
 import { APP_BASE_HREF } from '@angular/common';
-import { RoleGuardService } from './role-guard.service';
 import { ListComponent } from './list/list.component';
-import { AuthGuardService } from './auth-guard.service';
+import { GfaAuthGuard, GfaRoleGuard } from '@gfa/infra-angular';
 
 const routes: Routes = [
   { path: 'tickets', redirectTo: 'tickets/list', pathMatch: 'full' },
   {
-    path: 'tickets/list', component: ListComponent, canActivate: [AuthGuardService, RoleGuardService], data: {
+    path: 'tickets/list',
+    component: ListComponent,
+    canActivate: [GfaAuthGuard, GfaRoleGuard],
+    data: {
       expectedRole: 'tickets'
     }
   },

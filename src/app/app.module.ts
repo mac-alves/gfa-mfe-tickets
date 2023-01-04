@@ -1,13 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { TokenAdapter } from '@gfa/gfa-infra';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthService } from './auth.service';
 import { ListComponent } from './list/list.component';
-import { AuthGuardService } from './auth-guard.service';
-import { RoleGuardService } from './role-guard.service';
+import { GfaInfraAngularModule } from '@gfa/infra-angular';
 
 @NgModule({
   declarations: [
@@ -16,14 +13,10 @@ import { RoleGuardService } from './role-guard.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    GfaInfraAngularModule,
   ],
-  providers: [
-    AuthService,
-    TokenAdapter,
-    AuthGuardService,
-    RoleGuardService,
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
